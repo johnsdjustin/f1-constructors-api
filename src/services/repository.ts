@@ -5,8 +5,8 @@ import axios from 'axios';
  * for all data fetching services.
  */
 interface Repository {
-    retrieve(resource: string): void;
-    retrieveAll(): void;
+    retrieve(resource: string): any;
+    retrieveAll(): any;
 }
 
 
