@@ -20,12 +20,12 @@ const constants_1 = require("../utils/constants");
  */
 const getAllTeams = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const repository = new repository_1.TeamRepository(constants_1.API_BASE);
+        const repository = new repository_1.TeamRepository(constants_1.API_BASE); // Make repository a singleton
         const data = yield repository.retrieveAll();
         res.status(200).json({ 'message': 'success', 'data': data });
     }
     catch (err) {
-        res.status(400).json({ 'message': 'failure', 'data': [] });
+        res.status(500).json({ 'message': 'failure', 'data': [] });
     }
 });
 exports.getAllTeams = getAllTeams;

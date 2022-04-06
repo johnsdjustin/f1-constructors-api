@@ -19,28 +19,28 @@ const axios_1 = __importDefault(require("axios"));
  * the mock f1 teams service.
  */
 class TeamRepository {
-    constructor(baseUrl) {
-        this.baseUrl = baseUrl;
+    constructor(_baseUrl) {
+        this._baseUrl = _baseUrl;
     }
-    setBaseUrl(baseUrl) {
-        this.baseUrl = baseUrl;
+    get baseUrl() {
+        return this._baseUrl;
     }
-    getBaseUrl() {
-        return this.baseUrl;
+    set baseUrl(baseUrl) {
+        this._baseUrl = baseUrl;
     }
-    // Retrieve one resource from the baseUrl
+    // Retrieve one resource from the remote server
     retrieve(resource) {
         return __awaiter(this, void 0, void 0, function* () {
-            const resourceId = `${this.baseUrl}/${resource}`;
+            const resourceId = `${this._baseUrl}/${resource}`;
             const response = yield axios_1.default.get(resourceId);
             const data = response === null || response === void 0 ? void 0 : response.data;
             return data;
         });
     }
-    // Retrieve all resources from the base url
+    // Retrieve all resources from the remote server
     retrieveAll() {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield axios_1.default.get(this.baseUrl);
+            const response = yield axios_1.default.get(this._baseUrl);
             const data = response === null || response === void 0 ? void 0 : response.data;
             return data;
         });

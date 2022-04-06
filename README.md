@@ -10,18 +10,22 @@ My goals with this project are:
 ### Usage
 * Clone the repo
 * Run `npm i` to install dependencies
-* Compiles the project by running `npm run build`
+* Compile the project by running `npm run build`
 * Start the project by running `npm start`
 * Call the API `http://localhost:3000/<route>`
 
+### Routes
+```
 GET /teams
 
 GET /teams/:team
+```
 
 ### Project Todo
 
 * Add ability to create a team
 * Add unit tests w/ Jest
+* Integrate with a database
 * Integrate ESList
 * Integrate Prettier
 * Automate ESLint, Prettier, and Unit Testing checks with Github Actions

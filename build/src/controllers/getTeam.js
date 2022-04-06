@@ -27,7 +27,7 @@ const getTeam = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.status(200).json({ 'message': 'success', 'data': data });
     }
     catch (err) {
-        res.status(400).json({ 'message': 'failure', 'data': {} });
+        res.status(500).json({ 'message': 'failure', 'data': {} });
     }
 });
 exports.getTeam = getTeam;

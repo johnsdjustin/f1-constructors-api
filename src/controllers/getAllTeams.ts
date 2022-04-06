@@ -10,11 +10,11 @@ import { API_BASE } from '../utils/constants';
  */
 export const getAllTeams = async (req: Request, res: Response) => {
     try{
-        const repository = new TeamRepository(API_BASE);
+        const repository = new TeamRepository(API_BASE); // Make repository a singleton
         const data = await repository.retrieveAll();
 
         res.status(200).json({'message': 'success', 'data': data});
     } catch (err){
-        res.status(400).json({'message': 'failure', 'data': []});
+        res.status(500).json({'message': 'failure', 'data': []});
     }
 }
