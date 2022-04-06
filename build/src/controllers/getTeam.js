@@ -12,6 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTeam = void 0;
 const repository_1 = require("../services/repository");
 const constants_1 = require("../utils/constants");
+/**
+ * getTeam coordinates the request for a team. It recieves the request,
+ * parses information out of the request, fetches the team, and returns
+ * a response to the user
+ * @param req
+ * @param res
+ */
 const getTeam = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { team } = req.params;

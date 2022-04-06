@@ -12,6 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllTeams = void 0;
 const repository_1 = require("../services/repository");
 const constants_1 = require("../utils/constants");
+/**
+ * getAllTeams coordinates the request for all teams. It recieves a request,
+ * fetches all teams, and returns a response to the user
+ * @param req
+ * @param res
+ */
 const getAllTeams = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const repository = new repository_1.TeamRepository(constants_1.API_BASE);

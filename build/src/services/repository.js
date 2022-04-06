@@ -14,6 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TeamRepository = void 0;
 const axios_1 = __importDefault(require("axios"));
+/**
+ * The TeamRepository provides an API around fetching team data from
+ * the mock f1 teams service.
+ */
 class TeamRepository {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
@@ -24,6 +28,7 @@ class TeamRepository {
     getBaseUrl() {
         return this.baseUrl;
     }
+    // Retrieve one resource from the baseUrl
     retrieve(resource) {
         return __awaiter(this, void 0, void 0, function* () {
             const resourceId = `${this.baseUrl}/${resource}`;
@@ -32,6 +37,7 @@ class TeamRepository {
             return data;
         });
     }
+    // Retrieve all resources from the base url
     retrieveAll() {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield axios_1.default.get(this.baseUrl);
